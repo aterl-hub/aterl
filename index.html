@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemHub | 化学资料中枢</title>
+    <!-- 外部资源 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 本地样式 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cyber-dark text-gray-200 min-h-screen grid-bg overflow-x-hidden">
+    <!-- 顶部导航 -->
+    <nav class="glass-panel sticky top-0 z-50 border-b border-cyber-blue/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fa fa-flask text-cyber-blue text-xl"></i>
+                    <span class="font-tech text-xl font-bold text-cyber-blue text-glow">ChemHub</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-cyber-blue transition-colors duration-300">首页</a>
+                    <a href="#periodic" class="hover:text-cyber-blue transition-colors duration-300">元素周期表</a>
+                    <a href="#formulas" class="hover:text-cyber-blue transition-colors duration-300">化学公式</a>
+                    <a href="#resources" class="hover:text-cyber-blue transition-colors duration-300">资料文库</a>
+                    <a href="#tools" class="hover:text-cyber-blue transition-colors duration-300">计算工具</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="搜索资料..." 
+                            class="bg-cyber-panel border border-cyber-blue/30 rounded-full px-4 py-1.5 pl-10 text-sm focus:outline-none focus:border-cyber-blue/70 w-48 transition-all duration-300 focus:w-64">
+                        <i class="fa fa-search absolute left-3.5 top-2.5 text-cyber-blue/60"></i>
+                    </div>
+                    <button class="md:hidden text-cyber-blue">
+                        <i class="fa fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="relative py-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-block mb-6 px-4 py-1 border border-cyber-blue/40 rounded-full text-cyber-blue text-sm">
+                <i class="fa fa-cube mr-2"></i>化学知识数字化中枢
+            </div>
+            <h1 class="font-tech text-4xl md:text-6xl font-bold mb-6 text-white">
+                <span class="text-cyber-blue text-glow">探索</span> 分子世界的奥秘
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-10 text-lg">
+                系统化整理化学领域核心资料，从基础元素到复杂反应，一站式查询与学习平台
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="px-8 py-3 bg-cyber-blue/10 border border-cyber-blue text-cyber-blue rounded-md hover:bg-cyber-blue/20 transition-all duration-300 shadow-neon-blue font-medium">
+                    <i class="fa fa-book mr-2"></i>进入文库
+                </button>
+                <button class="px-8 py-3 bg-transparent border border-gray-600 text-gray-300 rounded-md hover:border-cyber-green hover:text-cyber-green transition-all duration-300 font-medium">
+                    <i class="fa fa-calculator mr-2"></i>摩尔质量计算
+                </button>
+            </div>
+        </div>
+        
+        <!-- 装饰性粒子 -->
+        <div class="absolute top-20 left-10 w-2 h-2 bg-cyber-blue rounded-full animate-pulse opacity-70"></div>
+        <div class="absolute top-40 right-20 w-1.5 h-1.5 bg-cyber-green rounded-full animate-pulse opacity-60"></div>
+        <div class="absolute bottom-10 left-1/4 w-1 h-1 bg-cyber-purple rounded-full animate-pulse opacity-80"></div>
+    </section>
+
+    <!-- 数据统计 -->
+    <section class="py-10 border-y border-cyber-blue/10">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="font-tech text-3xl text-cyber-blue text-glow mb-1">118</div>
+                <div class="text-gray-500 text-sm">化学元素</div>
+            </div>
+            <div class="text-center">
+                <div class="font-tech text-3xl text-cyber-green mb-1">500+</div>
+                <div class="text-gray-500 text-sm">化学反应式</div>
+            </div>
+            <div class="text-center">
+                <div class="font-tech text-3xl text-cyber-purple mb-1">80+</div>
+                <div class="text-gray-500 text-sm">专题资料</div>
+            </div>
+            <div class="text-center">
+                <div class="font-tech text-3xl text-yellow-400 mb-1">12</div>
+                <div class="text-gray-500 text-sm">计算工具</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 元素周期表 -->
+    <section id="periodic" class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-tech text-2xl md:text-3xl font-bold text-white mb-3">
+                    <span class="text-cyber-blue">|</span> 交互式元素周期表
+                </h2>
+                <p class="text-gray-400">点击任意元素查看详细属性数据</p>
+            </div>
+            
+            <div class="glass-panel rounded-lg p-4 md:p-6 border-glow overflow-x-auto">
+                <div class="min-w-[800px] grid grid-cols-18 gap-1 text-xs">
+                    <!-- 第一周期 -->
+                    <div class="element bg-red-500/20 border border-red-500/40 rounded p-1 text-center hover:bg-red-500/40 cursor-pointer transition-all col-start-1" data-element="H">
+                        <div class="font-bold">1</div>
+                        <div class="font-tech text-sm">H</div>
+                        <div class="text-[10px] text-gray-400">氢</div>
+                    </div>
+                    <div class="col-start-18 element bg-red-500/20 border border-red-500/40 rounded p-1 text-center hover:bg-red-500/40 cursor-pointer transition-all" data-element="He">
+                        <div class="font-bold">2</div>
+                        <div class="font-tech text-sm">He</div>
+                        <div class="text-[10px] text-gray-400">氦</div>
+                    </div>
+                    
+                    <!-- 第二周期 -->
+                    <div class="element bg-yellow-500/20 border border-yellow-500/40 rounded p-1 text-center hover:bg-yellow-500/40 cursor-pointer transition-all col-start-1" data-element="Li">
+                        <div class="font-bold">3</div>
+                        <div class="font-tech text-sm">Li</div>
+                        <div class="text-[10px] text-gray-400">锂</div>
+                    </div>
+                    <div class="element bg-yellow-500/20 border border-yellow-500/40 rounded p-1 text-center hover:bg-yellow-500/40 cursor-pointer transition-all col-start-2" data-element="Be">
+                        <div class="font-bold">4</div>
+                        <div class="font-tech text-sm">Be</div>
+                        <div class="text-[10px] text-gray-400">铍</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-13" data-element="B">
+                        <div class="font-bold">5</div>
+                        <div class="font-tech text-sm">B</div>
+                        <div class="text-[10px] text-gray-400">硼</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-14" data-element="C">
+                        <div class="font-bold">6</div>
+                        <div class="font-tech text-sm">C</div>
+                        <div class="text-[10px] text-gray-400">碳</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-15" data-element="N">
+                        <div class="font-bold">7</div>
+                        <div class="font-tech text-sm">N</div>
+                        <div class="text-[10px] text-gray-400">氮</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-16" data-element="O">
+                        <div class="font-bold">8</div>
+                        <div class="font-tech text-sm">O</div>
+                        <div class="text-[10px] text-gray-400">氧</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-17" data-element="F">
+                        <div class="font-bold">9</div>
+                        <div class="font-tech text-sm">F</div>
+                        <div class="text-[10px] text-gray-400">氟</div>
+                    </div>
+                    <div class="element bg-red-500/20 border border-red-500/40 rounded p-1 text-center hover:bg-red-500/40 cursor-pointer transition-all col-start-18" data-element="Ne">
+                        <div class="font-bold">10</div>
+                        <div class="font-tech text-sm">Ne</div>
+                        <div class="text-[10px] text-gray-400">氖</div>
+                    </div>
+                    
+                    <!-- 第三周期 -->
+                    <div class="element bg-yellow-500/20 border border-yellow-500/40 rounded p-1 text-center hover:bg-yellow-500/40 cursor-pointer transition-all col-start-1" data-element="Na">
+                        <div class="font-bold">11</div>
+                        <div class="font-tech text-sm">Na</div>
+                        <div class="text-[10px] text-gray-400">钠</div>
+                    </div>
+                    <div class="element bg-yellow-500/20 border border-yellow-500/40 rounded p-1 text-center hover:bg-yellow-500/40 cursor-pointer transition-all col-start-2" data-element="Mg">
+                        <div class="font-bold">12</div>
+                        <div class="font-tech text-sm">Mg</div>
+                        <div class="text-[10px] text-gray-400">镁</div>
+                    </div>
+                    <div class="element bg-blue-500/20 border border-blue-500/40 rounded p-1 text-center hover:bg-blue-500/40 cursor-pointer transition-all col-start-13" data-element="Al">
+                        <div class="font-bold">13</div>
+                        <div class="font-tech text-sm">Al</div>
+                        <div class="text-[10px] text-gray-400">铝</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-14" data-element="Si">
+                        <div class="font-bold">14</div>
+                        <div class="font-tech text-sm">Si</div>
+                        <div class="text-[10px] text-gray-400">硅</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-15" data-element="P">
+                        <div class="font-bold">15</div>
+                        <div class="font-tech text-sm">P</div>
+                        <div class="text-[10px] text-gray-400">磷</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-16" data-element="S">
+                        <div class="font-bold">16</div>
+                        <div class="font-tech text-sm">S</div>
+                        <div class="text-[10px] text-gray-400">硫</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-17" data-element="Cl">
+                        <div class="font-bold">17</div>
+                        <div class="font-tech text-sm">Cl</div>
+                        <div class="text-[10px] text-gray-400">氯</div>
+                    </div>
+                    <div class="element bg-red-500/20 border border-red-500/40 rounded p-1 text-center hover:bg-red-500/40 cursor-pointer transition-all col-start-18" data-element="Ar">
+                        <div class="font-bold">18</div>
+                        <div class="font-tech text-sm">Ar</div>
+                        <div class="text-[10px] text-gray-400">氩</div>
+                    </div>
+                    
+                    <!-- 第四周期 -->
+                    <div class="element bg-yellow-500/20 border border-yellow-500/40 rounded p-1 text-center hover:bg-yellow-500/40 cursor-pointer transition-all col-start-1" data-element="K">
+                        <div class="font-bold">19</div>
+                        <div class="font-tech text-sm">K</div>
+                        <div class="text-[10px] text-gray-400">钾</div>
+                    </div>
+                    <div class="element bg-yellow-500/20 border border-yellow-500/40 rounded p-1 text-center hover:bg-yellow-500/40 cursor-pointer transition-all col-start-2" data-element="Ca">
+                        <div class="font-bold">20</div>
+                        <div class="font-tech text-sm">Ca</div>
+                        <div class="text-[10px] text-gray-400">钙</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-3" data-element="Sc">
+                        <div class="font-bold">21</div>
+                        <div class="font-tech text-sm">Sc</div>
+                        <div class="text-[10px] text-gray-400">钪</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-4" data-element="Ti">
+                        <div class="font-bold">22</div>
+                        <div class="font-tech text-sm">Ti</div>
+                        <div class="text-[10px] text-gray-400">钛</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-5" data-element="V">
+                        <div class="font-bold">23</div>
+                        <div class="font-tech text-sm">V</div>
+                        <div class="text-[10px] text-gray-400">钒</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-6" data-element="Cr">
+                        <div class="font-bold">24</div>
+                        <div class="font-tech text-sm">Cr</div>
+                        <div class="text-[10px] text-gray-400">铬</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-7" data-element="Mn">
+                        <div class="font-bold">25</div>
+                        <div class="font-tech text-sm">Mn</div>
+                        <div class="text-[10px] text-gray-400">锰</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-8" data-element="Fe">
+                        <div class="font-bold">26</div>
+                        <div class="font-tech text-sm">Fe</div>
+                        <div class="text-[10px] text-gray-400">铁</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-9" data-element="Co">
+                        <div class="font-bold">27</div>
+                        <div class="font-tech text-sm">Co</div>
+                        <div class="text-[10px] text-gray-400">钴</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-10" data-element="Ni">
+                        <div class="font-bold">28</div>
+                        <div class="font-tech text-sm">Ni</div>
+                        <div class="text-[10px] text-gray-400">镍</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-11" data-element="Cu">
+                        <div class="font-bold">29</div>
+                        <div class="font-tech text-sm">Cu</div>
+                        <div class="text-[10px] text-gray-400">铜</div>
+                    </div>
+                    <div class="element bg-purple-500/20 border border-purple-500/40 rounded p-1 text-center hover:bg-purple-500/40 cursor-pointer transition-all col-start-12" data-element="Zn">
+                        <div class="font-bold">30</div>
+                        <div class="font-tech text-sm">Zn</div>
+                        <div class="text-[10px] text-gray-400">锌</div>
+                    </div>
+                    <div class="element bg-blue-500/20 border border-blue-500/40 rounded p-1 text-center hover:bg-blue-500/40 cursor-pointer transition-all col-start-13" data-element="Ga">
+                        <div class="font-bold">31</div>
+                        <div class="font-tech text-sm">Ga</div>
+                        <div class="text-[10px] text-gray-400">镓</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-14" data-element="Ge">
+                        <div class="font-bold">32</div>
+                        <div class="font-tech text-sm">Ge</div>
+                        <div class="text-[10px] text-gray-400">锗</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-15" data-element="As">
+                        <div class="font-bold">33</div>
+                        <div class="font-tech text-sm">As</div>
+                        <div class="text-[10px] text-gray-400">砷</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-16" data-element="Se">
+                        <div class="font-bold">34</div>
+                        <div class="font-tech text-sm">Se</div>
+                        <div class="text-[10px] text-gray-400">硒</div>
+                    </div>
+                    <div class="element bg-green-500/20 border border-green-500/40 rounded p-1 text-center hover:bg-green-500/40 cursor-pointer transition-all col-start-17" data-element="Br">
+                        <div class="font-bold">35</div>
+                        <div class="font-tech text-sm">Br</div>
+                        <div class="text-[10px] text-gray-400">溴</div>
+                    </div>
+                    <div class="element bg-red-500/20 border border-red-500/40 rounded p-1 text-center hover:bg-red-500/40 cursor-pointer transition-all col-start-18" data-element="Kr">
+                        <div class="font-bold">36</div>
+                        <div class="font-tech text-sm">Kr</div>
+                        <div class="text-[10px] text-gray-400">氪</div>
+                    </div>
+                </div>
+                
+                <!-- 图例 -->
+                <div class="flex flex-wrap gap-4 mt-6 justify-center text-xs">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-red-500/30 border border-red-500/50 rounded-sm"></div>
+                        <span>稀有气体</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-green-500/30 border border-green-500/50 rounded-sm"></div>
+                        <span>非金属</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-blue-500/30 border border-blue-500/50 rounded-sm"></div>
+                        <span>主族金属</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-purple-500/30 border border-purple-500/50 rounded-sm"></div>
+                        <span>过渡金属</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-yellow-500/30 border border-yellow-500/50 rounded-sm"></div>
+                        <span>碱金属/碱土</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 化学公式速查 -->
+    <section id="formulas" class="py-16 px-4 bg-gradient-to-b from-transparent to-cyber-blue/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-tech text-2xl md:text-3xl font-bold text-white mb-3">
+                    <span class="text-cyber-green">|</span> 核心公式速查
+                </h2>
+                <p class="text-gray-400">常用化学公式与定律一键查阅</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 公式卡片 1 -->
+                <div class="glass-panel rounded-lg p-6 hover:border-cyber-blue/50 transition-all duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 flex items-center justify-center mr-3 group-hover:shadow-neon-blue transition-all">
+                            <i class="fa fa-calculator text-cyber-blue"></i>
+                        </div>
+                        <h3 class="font-tech font-semibold text-white">理想气体状态方程</h3>
+                    </div>
+                    <div class="bg-cyber-dark/50 rounded p-4 mb-4 text-center font-mono text-lg text-cyber-blue">
+                        PV = nRT
+                    </div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>P：压强 (Pa)</li>
+                        <li>V：体积 (m³)</li>
+                        <li>n：物质的量 (mol)</li>
+                        <li>R：气体常数 8.314 J/(mol·K)</li>
+                        <li>T：热力学温度 (K)</li>
+                    </ul>
+                </div>
+                
+                <!-- 公式卡片 2 -->
+                <div class="glass-panel rounded-lg p-6 hover:border-cyber-green/50 transition-all duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-cyber-green/10 border border-cyber-green/30 flex items-center justify-center mr-3 group-hover:shadow-neon-green transition-all">
+                            <i class="fa fa-balance-scale text-cyber-green"></i>
+                        </div>
+                        <h3 class="font-tech font-semibold text-white">摩尔质量公式</h3>
+                    </div>
+                    <div class="bg-cyber-dark/50 rounded p-4 mb-4 text-center font-mono text-lg text-cyber-green">
+                        n = m / M
+                    </div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>n：物质的量 (mol)</li>
+                        <li>m：质量 (g)</li>
+                        <li>M：摩尔质量 (g/mol)</li>
+                        <li>数值上等于相对分子质量</li>
+                    </ul>
+                </div>
+                
+                <!-- 公式卡片 3 -->
+                <div class="glass-panel rounded-lg p-6 hover:border-cyber-purple/50 transition-all duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center mr-3">
+                            <i class="fa fa-tint text-cyber-purple"></i>
+                        </div>
+                        <h3 class="font-tech font-semibold text-white">物质的量浓度</h3>
+                    </div>
+                    <div class="bg-cyber-dark/50 rounded p-4 mb-4 text-center font-mono text-lg text-cyber-purple">
+                        c = n / V
+                    </div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>c：物质的量浓度 (mol/L)</li>
+                        <li>n：溶质的物质的量 (mol)</li>
+                        <li>V：溶液体积 (L)</li>
+                        <li>稀释定律：c₁V₁ = c₂V₂</li>
+                    </ul>
+                </div>
+                
+                <!-- 公式卡片 4 -->
+                <div class="glass-panel rounded-lg p-6 hover:border-yellow-500/50 transition-all duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center mr-3">
+                            <i class="fa fa-thermometer-half text-yellow-500"></i>
+                        </div>
+                        <h3 class="font-tech font-semibold text-white">阿伦尼乌斯公式</h3>
+                    </div>
+                    <div class="bg-cyber-dark/50 rounded p-4 mb-4 text-center font-mono text-lg text-yellow-500">
+                        k = A·e<sup>-Ea/RT</sup>
+                    </div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>k：反应速率常数</li>
+                        <li>A：指前因子</li>
+                        <li>Ea：活化能 (J/mol)</li>
+                        <li>描述温度对反应速率的影响</li>
+                    </ul>
+                </div>
+                
+                <!-- 公式卡片 5 -->
+                <div class="glass-panel rounded-lg p-6 hover:border-pink-500/50 transition-all duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-pink-500/10 border border-pink-500/30 flex items-center justify-center mr-3">
+                            <i class="fa fa-flask text-pink-500"></i>
+                        </div>
+                        <h3 class="font-tech font-semibold text-white">化学平衡常数</h3>
+                    </div>
+                    <div class="bg-cyber-dark/50 rounded p-4 mb-4 text-center font-mono text-lg text-pink-500">
+                        K = [C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup>
+                    </div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>对于反应 aA + bB ⇌ cC + dD</li>
+                        <li>只与温度有关</li>
+                        <li>K > 10⁵ 反应基本完全</li>
+                        <li>K < 10⁻⁵ 反应难以进行</li>
+                    </ul>
+                </div>
+                
+                <!-- 公式卡片 6 -->
+                <div class="glass-panel rounded-lg p-6 hover:border-orange-500/50 transition-all duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center mr-3">
+                            <i class="fa fa-bolt text-orange-500"></i>
+                        </div>
+                        <h3 class="font-tech font-semibold text-white">能斯特方程</h3>
+                    </div>
+                    <div class="bg-cyber-dark/50 rounded p-4 mb-4 text-center font-mono text-lg text-orange-500">
+                        E = E° - (RT/nF)lnQ
+                    </div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>E：电极电势</li>
+                        <li>E°：标准电极电势</li>
+                        <li>n：转移电子数</li>
+                        <li>F：法拉第常数 96485 C/mol</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资料文库 -->
+    <section id="resources" class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-tech text-2xl md:text-3xl font-bold text-white mb-3">
+                    <span class="text-cyber-purple">|</span> 专题资料文库
+                </h2>
+                <p class="text-gray-400">系统化整理的化学学习与研究资料</p>
+            </div>
+            
+            <!-- 分类标签 -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button class="px-4 py-2 bg-cyber-blue/10 border border-cyber-blue/40 text-cyber-blue rounded-full text-sm">全部</button>
+                <button class="px-4 py-2 border border-gray-700 text-gray-400 rounded-full text-sm hover:border-cyber-blue/40 hover:text-cyber-blue transition-colors">无机化学</button>
+                <button class="px-4 py-2 border border-gray-700 text-gray-400 rounded-full text-sm hover:border-cyber-blue/40 hover:text-cyber-blue transition-colors">有机化学</button>
+                <button class="px-4 py-2 border border-gray-700 text-gray-400 rounded-full text-sm hover:border-cyber-blue/40 hover:text-cyber-blue transition-colors">物理化学</button>
+                <button class="px-4 py-2 border border-gray-700 text-gray-400 rounded-full text-sm hover:border-cyber-blue/40 hover:text-cyber-blue transition-colors">分析化学</button>
+                <button class="px-4 py-2 border border-gray-700 text-gray-400 rounded-full text-sm hover:border-cyber-blue/40 hover:text-cyber-blue transition-colors">高分子化学</button>
+                <button class="px-4 py-2 border border-gray-700 text-gray-400 rounded-full text-sm hover:border-cyber-blue/40 hover:text-cyber-blue transition-colors">实验手册</button>
+            </div>
+            
+            <!-- 资料卡片 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="glass-panel rounded-lg overflow-hidden group hover:border-cyber-blue/40 transition-all duration-300">
+                    <div class="h-32 bg-gradient-to-br from-blue-900/50 to-cyber-blue/20 flex items-center justify-center relative overflow-hidden">
+                        <i class="fa fa-cubes text-5xl text-cyber-blue/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute top-3 right-3 px-2 py-0.5 bg-cyber-blue/20 text-cyber-blue text-xs rounded">无机</div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-medium text-white mb-2 group-hover:text-cyber-blue transition-colors">元素周期律深度解析</h4>
+                        <p class="text-gray-500 text-sm mb-3 line-clamp-2">系统讲解元素性质递变规律，电离能、电负性变化趋势及特例分析</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa fa-file-text-o mr-1"></i> 28 页</span>
+                            <span><i class="fa fa-download mr-1"></i> 1.2k</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-panel rounded-lg overflow-hidden group hover:border-cyber-green/40 transition-all duration-300">
+                    <div class="h-32 bg-gradient-to-br from-green-900/50 to-cyber-green/20 flex items-center justify-center relative overflow-hidden">
+                        <i class="fa fa-chain text-5xl text-cyber-green/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute top-3 right-3 px-2 py-0.5 bg-cyber-green/20 text-cyber-green text-xs rounded">有机</div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-medium text-white mb-2 group-hover:text-cyber-green transition-colors">有机反应机理大全</h4>
+                        <p class="text-gray-500 text-sm mb-3 line-clamp-2">涵盖亲核取代、消除、加成等核心反应机理，附箭头推导演示</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa fa-file-text-o mr-1"></i> 45 页</span>
+                            <span><i class="fa fa-download mr-1"></i> 2.8k</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-panel rounded-lg overflow-hidden group hover:border-cyber-purple/40 transition-all duration-300">
+                    <div class="h-32 bg-gradient-to-br from-purple-900/50 to-cyber-purple/20 flex items-center justify-center relative overflow-hidden">
+                        <i class="fa fa-thermometer text-5xl text-cyber-purple/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute top-3 right-3 px-2 py-0.5 bg-cyber-purple/20 text-cyber-purple text-xs rounded">物化</div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-medium text-white mb-2 group-hover:text-cyber-purple transition-colors">热力学公式推导手册</h4>
+                        <p class="text-gray-500 text-sm mb-3 line-clamp-2">三大热力学定律完整推导，吉布斯自由能与化学平衡关联</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa fa-file-text-o mr-1"></i> 36 页</span>
+                            <span><i class="fa fa-download mr-1"></i> 956</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-panel rounded-lg overflow-hidden group hover:border-yellow-500/40 transition-all duration-300">
+                    <div class="h-32 bg-gradient-to-br from-yellow-900/50 to-yellow-500/20 flex items-center justify-center relative overflow-hidden">
+                        <i class="fa fa-eyedropper text-5xl text-yellow-500/30 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute top-3 right-3 px-2 py-0.5 bg-yellow-500/20 text-yellow-500 text-xs rounded">实验</div>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="font-medium text-white mb-2 group-hover:text-yellow-500 transition-colors">基础化学实验操作指南</h4>
+                        <p class="text-gray-500 text-sm mb-3 line-clamp-2">滴定、萃取、蒸馏等基础操作规范，常见误差分析与注意事项</p>
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span><i class="fa fa-file-text-o mr-1"></i> 52 页</span>
+                            <span><i class="fa fa-download mr-1"></i> 3.1k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button class="px-6 py-2.5 border border-cyber-blue/40 text-cyber-blue rounded-md hover:bg-cyber-blue/10 transition-all duration-300">
+                    查看全部资料 <i class="fa fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 计算工具 -->
+    <section id="tools" class="py-16 px-4 bg-gradient-to-b from-cyber-blue/5 to-transparent">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-tech text-2xl md:text-3xl font-bold text-white mb-3">
+                    <span class="text-cyber-blue">|</span> 在线计算工具
+                </h2>
+                <p class="text-gray-400">常用化学计算工具，快速精准</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-panel rounded-lg p-6 hover:border-cyber-blue/50 transition-all group">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-blue/10 border border-cyber-blue/30 flex items-center justify-center mb-4 group-hover:shadow-neon-blue transition-all">
+                        <i class="fa fa-calculator text-cyber-blue text-xl"></i>
+                    </div>
+                    <h3 class="font-tech font-semibold text-white mb-2">摩尔质量计算器</h3>
+                    <p class="text-gray-400 text-sm mb-4">输入分子式，自动计算摩尔质量及元素质量分数</p>
+                    <button class="text-cyber-blue text-sm hover:underline">立即使用 →</button>
+                </div>
+                
+                <div class="glass-panel rounded-lg p-6 hover:border-cyber-green/50 transition-all group">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-green/10 border border-cyber-green/30 flex items-center justify-center mb-4 group-hover:shadow-neon-green transition-all">
+                        <i class="fa fa-flask text-cyber-green text-xl"></i>
+                    </div>
+                    <h3 class="font-tech font-semibold text-white mb-2">溶液稀释计算器</h3>
+                    <p class="text-gray-400 text-sm mb-4">根据稀释定律快速计算稀释前后浓度与体积</p>
+                    <button class="text-cyber-green text-sm hover:underline">立即使用 →</button>
+                </div>
+                
+                <div class="glass-panel rounded-lg p-6 hover:border-cyber-purple/50 transition-all group">
+                    <div class="w-12 h-12 rounded-lg bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center mb-4">
+                        <i class="fa fa-tachometer text-cyber-purple text-xl"></i>
+                    </div>
+                    <h3 class="font-tech font-semibold text-white mb-2">pH 值计算器</h3>
+                    <p class="text-gray-400 text-sm mb-4">酸碱溶液 pH 计算，支持一元/多元弱酸弱碱</p>
+                    <button class="text-cyber-purple text-sm hover:underline">立即使用 →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="border-t border-cyber-blue/10 py-10 px-4 mt-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fa fa-flask text-cyber-blue"></i>
+                    <span class="font-tech text-lg font-bold text-cyber-blue">ChemHub</span>
+                </div>
+                <div class="flex space-x-6 text-gray-500 text-sm">
+                    <a href="#" class="hover:text-cyber-blue transition-colors">关于我们</a>
+                    <a href="#" class="hover:text-cyber-blue transition-colors">资料投稿</a>
+                    <a href="#" class="hover:text-cyber-blue transition-colors">意见反馈</a>
+                    <a href="#" class="hover:text-cyber-blue transition-colors">联系我们</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-600 text-sm">
+                © 2026 ChemHub 化学资料中枢 | 致力于化学知识的数字化整理与传播
+            </div>
+        </div>
+    </footer>
+
+    <!-- 元素详情弹窗 -->
+    <div id="elementModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="glass-panel rounded-xl max-w-md w-full p-6 border-glow relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fa fa-times"></i>
+            </button>
+            <div class="flex items-start gap-4 mb-4">
+                <div class="w-20 h-20 rounded-lg bg-cyber-blue/10 border border-cyber-blue/40 flex flex-col items-center justify-center">
+                    <span id="modalSymbol" class="font-tech text-2xl text-cyber-blue">H</span>
+                    <span id="modalNumber" class="text-sm text-gray-400">1</span>
+                </div>
+                <div>
+                    <h3 id="modalName" class="font-tech text-xl font-bold text-white">氢</h3>
+                    <p id="modalEnglish" class="text-gray-400 text-sm">Hydrogen</p>
+                    <p id="modalMass" class="text-cyber-blue text-sm mt-1">相对原子质量: 1.008</p>
+                </div>
+            </div>
+            <div class="space-y-3 text-sm">
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                    <span class="text-gray-500">元素类别</span>
+                    <span id="modalCategory" class="text-gray-300">非金属</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                    <span class="text-gray-500">周期/族</span>
+                    <span id="modalPeriod" class="text-gray-300">第1周期 / ⅠA族</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                    <span class="text-gray-500">电子排布</span>
+                    <span id="modalElectron" class="text-gray-300">1s¹</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-800 pb-2">
+                    <span class="text-gray-500">密度</span>
+                    <span id="modalDensity" class="text-gray-300">0.0899 g/L</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">发现年份</span>
+                    <span id="modalYear" class="text-gray-300">1766年</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 本地脚本 -->
+    <script src="script.js"></script>
+</body>
+</html>

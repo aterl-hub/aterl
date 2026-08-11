@@ -1,0 +1,25 @@
+/* Tailwind 自定义工具类 */
+@layer utilities {
+    .text-glow {
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.7), 0 0 20px rgba(0, 212, 255, 0.4);
+    }
+    .border-glow {
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.2), inset 0 0 15px rgba(0, 212, 255, 0.05);
+    }
+    .glass-panel {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+    .grid-bg {
+        background-image: 
+            linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+}
+
+/* 自定义字体 */
+.font-tech {
+    font-family: 'Orbitron', system-ui, sans-serif;
+}
